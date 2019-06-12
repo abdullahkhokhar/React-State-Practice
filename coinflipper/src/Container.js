@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import {choice} from './helpers'
+import React, {Component} from 'react';
+import {choice} from './helpers';
+import Coin from '.Coin';
 
 class Container extends Component{
   static defaultProps = {
@@ -25,9 +26,11 @@ class Container extends Component{
     this.setState(st => {
       return {
         currCoin: newCoin,
-        nFlips:
-      }
-    })
+        nFlips: st.nFlips + 1,
+        nHeads: st.nHeads + (newCoin.side === "heads" ? 1 : 0),
+        nTails: st.nTails + (newCoin.side === "tails" ? 1 : 0)
+      };
+    });
   }
 
   handleClick(e){
@@ -39,6 +42,7 @@ class Container extends Component{
       <div className = "Container">
       <h2>Flip a Coin!</h2>
       <button onClick = {this.handleClick}>Flip Me!</button>
+      {this.state.currCoin && <Coin info = {this.state.currCoin}/>}
       <p>Out of {this.state.nFlips}, There are {this.state.nHeads} heads and {this.state.nTails} tails </p>
       </div>
     );
