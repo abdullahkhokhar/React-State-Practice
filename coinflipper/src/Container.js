@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {choice} from './helpers';
-import Coin from '.Coin';
+import Coin from './Coin';
 
 class Container extends Component{
   static defaultProps = {
@@ -41,8 +41,8 @@ class Container extends Component{
     return(
       <div className = "Container">
       <h2>Flip a Coin!</h2>
-      <button onClick = {this.handleClick}>Flip Me!</button>
       {this.state.currCoin && <Coin info = {this.state.currCoin}/>}
+      <button onClick = {this.handleClick}>Flip Me!</button>
       <p>Out of {this.state.nFlips}, There are {this.state.nHeads} heads and {this.state.nTails} tails </p>
       </div>
     );
