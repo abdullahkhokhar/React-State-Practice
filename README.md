@@ -1,8 +1,7 @@
-## Pokedex!
-![](app-image.png)
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project 1: Coin Flipper!
+![](coin.gif)
 
 ## Available Scripts
 
